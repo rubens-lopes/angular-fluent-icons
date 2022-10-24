@@ -1,18 +1,53 @@
 {
   "name": "@rubens.lopes/angular-fluent-icons",
-  "version": "0.0.0",
+  "version": "0.0.1",
+  "description": "Angular library for fluent icons",
+  "keywords": [
+    "Angular svg icons fluent"
+  ],
+  "type": "module",
+  "main": "dist/fluent-icons",
   "scripts": {
     "ng": "ng",
+    "generate-icons": "svg-to-ts-files",
     "build": "ng build",
+    "postbuild": "cpx 'projects/fluent-icons/src/icons/**/*.{d.ts,js}' dist/fluent-icons/icons",
     "dev": "ng build --watch --configuration development",
     "test": "ng test --watch=false",
     "test:watch": "ng test",
     "lint": "ng lint --fix"
   },
+  "author": "Rubens Armôa Lopes",
+  "repository": {
+    "directory": "src",
+    "type": "git",
+    "url": "https://github.com/rubens-lopes/fluent-icons"
+  },
+  "license": "MIT",
   "engineStrict": true,
   "engines": {
     "node": "18",
     "pnpm": "7"
+  },
+  "svg-to-ts": {
+    "srcFiles": [
+      "./node_modules/@fluentui/svg-icons/icons/**_24_{filled,regular}.svg"
+    ],
+    "outputDirectory": "./projects/fluent-icons/src/",
+    "barrelFileName": "fluent-icons",
+    "iconsFolderName": "icons",
+    "interfaceName": "FluentIcon",
+    "typeName": "iconName",
+    "prefix": "fi",
+    "optimizeForLazyLoading": true,
+    "modelFileName": "fluent-icon.model",
+    "additionalModelFile": "./projects/fluent-icons/src/lib",
+    "svgoConfig": {
+      "plugins": [
+        "cleanupAttrs"
+      ]
+    },
+    "compileSources": true
   },
   "dependencies": {
     "@angular/animations": "^14.2.0",
@@ -36,9 +71,11 @@
     "@angular-eslint/template-parser": "14.1.2",
     "@angular/cli": "~14.2.6",
     "@angular/compiler-cli": "^14.2.0",
+    "@fluentui/svg-icons": "^1.1.185",
     "@types/jasmine": "~4.3.0",
     "@typescript-eslint/eslint-plugin": "5.37.0",
     "@typescript-eslint/parser": "5.37.0",
+    "cpx": "^1.5.0",
     "eslint": "^8.23.1",
     "eslint-config-prettier": "^8.5.0",
     "eslint-plugin-prettier": "^4.2.1",
@@ -52,6 +89,7 @@
     "prettier": "^2.7.1",
     "prettier-eslint": "^15.0.1",
     "puppeteer": "^19.1.1",
+    "svg-to-ts": "^8.9.0",
     "typescript": "~4.8.4"
   }
 }
