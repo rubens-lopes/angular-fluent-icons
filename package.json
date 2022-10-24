@@ -6,6 +6,7 @@
     "Angular svg icons fluent"
   ],
   "type": "module",
+  "private": false,
   "main": "dist/fluent-icons",
   "scripts": {
     "ng": "ng",
