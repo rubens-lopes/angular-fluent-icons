@@ -1,0 +1,21 @@
+{
+  "extends": "../../.eslintrc.json",
+  "ignorePatterns": ["!**/*"],
+  "overrides": [
+    {
+      "files": ["*.ts"],
+      "parserOptions": {
+        "project": [
+          "projects/fluent-icons/tsconfig.lib.json",
+          "projects/fluent-icons/tsconfig.spec.json"
+        ],
+        "createDefaultProgram": true
+      },
+      "rules": {}
+    },
+    {
+      "files": ["*.html"],
+      "rules": {}
+    }
+  ]
+}
