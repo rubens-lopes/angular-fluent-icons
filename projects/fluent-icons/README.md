@@ -1,6 +1,6 @@
 # AngularFluentIcons
 
-A tree-shakable icon library for Angular
+A tree-shakable icon library for Angular, based on this [article](https://medium.com/angular-in-depth/how-to-create-a-fully-tree-shakable-icon-library-in-angular-c5488cf9cd76).
 
 This library was generated with [Angular CLI](https://github.com/angular/angular-cli) version 14.2.0.
 
