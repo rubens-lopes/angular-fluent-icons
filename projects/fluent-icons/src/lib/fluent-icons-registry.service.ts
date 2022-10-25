@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core'
-import { FluentIcon, iconName } from '../icons/fluent-icon.model'
+import { FluentIcon, iconName } from './fluent-icons'
 
 @Injectable({
   providedIn: `any`,

@@ -8,11 +8,12 @@ import {
 } from '@angular/core'
 import { DOCUMENT } from '@angular/common'
 import { FluentIconsRegistryService } from './fluent-icons-registry.service'
-import { iconName } from '../icons/fluent-icon.model'
+import { iconName } from './fluent-icons'
 
 @Component({
   selector: `fluent-icons`,
   template: ``,
+  styleUrls: [`./fluent-icons.component.css`],
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class FluentIconsComponent {

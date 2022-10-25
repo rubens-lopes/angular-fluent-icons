@@ -1,25 +1,51 @@
-# FluentIcons
+# AngularFluentIcons
+
+A tree-shakable icon library for Angular
 
 This library was generated with [Angular CLI](https://github.com/angular/angular-cli) version 14.2.0.
 
-## Code scaffolding
+## Usage
 
-Run `ng generate component component-name --project fluent-icons` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module --project fluent-icons`.
+Import `FluentIconsModule` on your module
+```typescript
+// app.module.ts
+import { BrowserModule } from '@angular/platform-browser'
 
-> Note: Don't forget to add `--project fluent-icons` or else it will be added to the default project in your `angular.json` file.
+import { AppRoutingModule } from './app-routing.module'
+import { AppComponent } from './app.component'
+import { MyComponentComponent } from './componentes/my-component.component'
+import { FluentIconsModule } from '@rubens.lopes/angular-fluent-icons'
 
-## Build
+@NgModule({
+  declarations: [AppComponent, MyComponentComponent],
+  imports: [BrowserModule, AppRoutingModule, FluentIconsModule],
+  providers: [],
+  bootstrap: [AppComponent],
+})
+export class AppModule {}
+```
 
-Run `ng build fluent-icons` to build the project. The build artifacts will be stored in the `dist/` directory.
+  <fluent-icons class="fill-white w-16 h-16" name="album"></fluent-icons>
 
-## Publishing
+Use `FluentIconsRegistryService` to register which icons you are using
+```typescript
+// my-component.component.ts
+import { Component } from '@angular/core'
+import { FluentIconsRegistryService, fiAlbum } from '@rubens.lopes/angular-fluent-icons'
 
-After building your library with `ng build fluent-icons`, go to the dist folder `cd dist/fluent-icons` and run `npm publish`.
+@Component({
+  selector: `app-my-component`,
+  templateUrl: `./my-component.component.html`,
+})
+export class MyComponentComponent {
+  constructor(private fluentIconRegistry: FluentIconsRegistryService) {
+    fluentIconRegistry.registerIcons([fiAlbum])
+  }
+}
+```
+Finally, use the `fluent-icons`  component on the html, with intellisense, and control size, color and margin via css class
 
-## Running unit tests
-
-Run `ng test fluent-icons` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+```html
+<!-- my-component.component.html-->
+  <fluent-icons class="fill-white w-16 h-16" name="album"></fluent-icons> <- This is a album icon
+```

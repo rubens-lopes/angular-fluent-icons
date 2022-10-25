@@ -1,16 +1,14 @@
 {
   "name": "@rubens.lopes/angular-fluent-icons",
-  "version": "0.0.1",
-  "description": "Angular library for fluent icons",
+  "version": "0.0.8",
+  "description": "A tree-shakable icon library for Angular",
   "keywords": [
-    "Angular svg icons fluent"
+    "Angular svg icons fluent tree-shake tree-shaking"
   ],
   "type": "module",
-  "private": false,
-  "main": "dist/fluent-icons",
   "author": "Rubens Armôa Lopes",
   "repository": {
-    "directory": "src",
+    "directory": "projects/fluent-icons/src",
     "type": "git",
     "url": "https://github.com/rubens-lopes/angular-fluent-icons"
   },
