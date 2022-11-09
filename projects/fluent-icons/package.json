@@ -1,6 +1,6 @@
 {
   "name": "@rubens.lopes/angular-fluent-icons",
-  "version": "0.0.8",
+  "version": "0.0.9",
   "description": "A tree-shakable icon library for Angular",
   "keywords": [
     "Angular svg icons fluent tree-shake tree-shaking"
